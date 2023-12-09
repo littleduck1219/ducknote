@@ -5,7 +5,6 @@ import { useRouter } from "next/navigation";
 import { ChangeEventHandler, FormEventHandler, useState } from "react";
 import { AiOutlineClose } from "react-icons/ai";
 
-
 export default function SignupModal() {
     const [id, setId] = useState("");
     const [password, setPassword] = useState("");
@@ -16,7 +15,6 @@ export default function SignupModal() {
     const router = useRouter();
     const onClickClose = () => {
         router.back();
-        // TODO: 뒤로가기가 /home이 아니면 /home으로 보내기
     };
 
     const onChangeId: ChangeEventHandler<HTMLInputElement> = (e) => {
