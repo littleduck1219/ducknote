@@ -1,8 +1,14 @@
+"use client";
+
 import React from "react";
 import style from "./trandSection.module.css";
 import Trend from "./Trend";
+import { usePathname } from "next/navigation";
 
-const TrandSection = () => {
+const TrendSection = () => {
+    const pathname = usePathname();
+
+    if (pathname === "/explore") return null;
     return (
         <div className={style.trendBg}>
             <div className={style.trend}>
@@ -24,4 +30,4 @@ const TrandSection = () => {
     );
 };
 
-export default TrandSection;
+export default TrendSection;
