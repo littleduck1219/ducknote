@@ -6,6 +6,14 @@ export const {
   auth,
 } = NextAuth({
   pages: { signIn: "/i/flow/login", newUser: "/i/flow/signup" },
+  // callbacks: {
+  //   async authorized({ request, auth }) {
+  //     if (!auth) {
+  //       return NextResponse.redirect(`http://localhost:3000/i/flow/login`);
+  //     }
+  //     return true;
+  //   },
+  // },
   providers: [
     CredentialsProvider({
       async authorize(credentials) {
@@ -29,7 +37,7 @@ export const {
 
         const user = await authResponse.json();
 
-        return { id: user.id, name: user.nickname };
+        return { email: user.id, name: user.nickname };
       },
     }),
   ],

@@ -26,7 +26,7 @@ const LogOutButton = () => {
       </div>
       <div className={style.logOutUserName}>
         <div>{me.user?.name}</div>
-        <div>@{me.user?.id}</div>
+        <div>@{me.user?.email}</div>
       </div>
     </button>
   );

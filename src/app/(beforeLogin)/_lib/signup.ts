@@ -46,6 +46,6 @@ export default async (prevState: any, formData: FormData) => {
   }
 
   if (shouldRedirect) {
-    redirect("/home");
+    redirect("/home"); // try/catch문 안에서 X
   }
 };
