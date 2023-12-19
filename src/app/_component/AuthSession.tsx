@@ -1,8 +1,10 @@
-"use client";
-
+'use client';
 import { SessionProvider } from "next-auth/react";
-import { LayoutProps } from "@/types/props";
 
-export default function AuthSession({ children }: LayoutProps) {
+type Props = ({
+  children: React.ReactNode;
+});
+
+export default function AuthSession({ children }: Props) {
   return <SessionProvider>{children}</SessionProvider>;
 }

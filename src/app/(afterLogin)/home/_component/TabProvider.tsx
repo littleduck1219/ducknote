@@ -1,13 +1,19 @@
-"use client";
+"use client"
 
-import { LayoutProps } from "@/types/props";
-import React, { createContext, useState } from "react";
+import {createContext, ReactNode, useState} from "react";
 
-export const TabContext = createContext({ tab: "rec", setTab: (value: "rec" | "fol") => {} });
+export const TabContext = createContext({
+  tab: 'rec',
+  setTab: (value: 'rec' | 'fol') => {},
+});
 
-const TabProvider = ({ children }: LayoutProps) => {
-    const [tab, setTab] = useState("rec");
-    return <TabContext.Provider value={{ tab, setTab }}>{children}</TabContext.Provider>;
-};
+type Props = { children: ReactNode };
+export default function TabProvider({ children }: Props) {
+  const [tab, setTab] = useState('rec');
 
-export default TabProvider;
+  return (
+    <TabContext.Provider value={{ tab, setTab }}>
+      {children}
+    </TabContext.Provider>
+  )
+}

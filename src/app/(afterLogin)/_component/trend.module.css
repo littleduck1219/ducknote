@@ -3,9 +3,8 @@
     height: 82px;
     display: block;
 }
-
 .container:hover {
-    background-color: rgba(0, 0, 0, 0.03);
+    background-color: rgba(0,0,0,0.03);
 }
 
 .title {
@@ -17,7 +16,7 @@
 }
 
 .count {
-    color: rgb(82, 100, 11);
+    color: rgb(83, 100, 113);
     font-size: 13px;
     line-height: 16px;
     font-weight: lighter;

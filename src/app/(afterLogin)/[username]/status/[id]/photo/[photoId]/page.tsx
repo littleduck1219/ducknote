@@ -1,9 +1,13 @@
-import React from "react";
 import Home from "@/app/(afterLogin)/home/page";
-import { ParamsProps } from "@/types/props";
 
-const Page = ({ params }: ParamsProps) => {
-  return <Home />;
-};
-
-export default Page;
+type Props = {
+  params: { username: string, id: string, photoId: string }
+}
+export default function Page({ params }: Props) {
+  params.username // elonmusk
+  params.id // 1
+  params.photoId // 1
+  return (
+    <Home />
+  )
+}

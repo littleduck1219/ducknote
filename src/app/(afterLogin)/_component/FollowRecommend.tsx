@@ -1,24 +1,13 @@
-"use client";
+"use client"
 
-import React from "react";
-import style from "./followRecommend.module.css";
-import { useRouter } from "next/navigation";
-import { useSession } from "next-auth/react";
+import style from './followRecommend.module.css';
+import {User} from "@/model/User";
 
-const FollowRecommend = () => {
-  const user = {
-    id: "littleduck1219",
-    nickname: "littleduck",
-    image: "/littleduck-logo.png",
-  };
-  const router = useRouter();
-  const { data } = useSession();
-
-  const onFollow = () => {
-    if (!data) {
-      router.replace("/i/flow/login");
-    }
-  };
+type Props = {
+  user: User
+}
+export default function FollowRecommend({ user }: Props) {
+  const onFollow = () => {};
 
   return (
     <div className={style.container}>
@@ -35,7 +24,5 @@ const FollowRecommend = () => {
         <button onClick={onFollow}>팔로우</button>
       </div>
     </div>
-  );
-};
-
-export default FollowRecommend;
+  )
+}

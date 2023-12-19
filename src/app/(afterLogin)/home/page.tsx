@@ -1,23 +1,21 @@
-import React from "react";
-import style from "./home.module.css";
-import Tab from "./_component/Tab";
-import PostForm from "./_component/PostForm";
-import TabProvider from "./_component/TabProvider";
-import Post from "../_component/Post";
+import style from './home.module.css';
+import Tab from "@/app/(afterLogin)/home/_component/Tab";
+import TabProvider from "@/app/(afterLogin)/home/_component/TabProvider";
+import PostForm from "@/app/(afterLogin)/home/_component/PostForm";
+import {Suspense} from "react";
+import Loading from "@/app/(afterLogin)/home/loading";
+import TabDeciderSuspense from "@/app/(afterLogin)/home/_component/TabDeciderSuspense";
 
-const Home = () => {
-    return (
-        <main className={style.main}>
-            <TabProvider>
-                <Tab />
-                <PostForm />
-                <Post />
-                <Post />
-                <Post />
-                <Post />
-            </TabProvider>
-        </main>
-    );
-};
-
-export default Home;
+export default async function Home() {
+  return (
+    <main className={style.main}>
+      <TabProvider>
+        <Tab/>
+        <PostForm/>
+        <Suspense fallback={<Loading />}>
+          <TabDeciderSuspense />
+        </Suspense>
+      </TabProvider>
+    </main>
+  )
+}

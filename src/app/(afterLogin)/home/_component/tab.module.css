@@ -12,13 +12,13 @@
 
 .homeFixed {
     position: fixed;
+    z-index: 1;
     width: 598px;
-    background-color: rgb(255, 255, 255, 0.05);
+    background-color: rgba(255, 255, 255, 0.85);
     backdrop-filter: blur(12px);
     border-color: rgb(239, 243, 244);
     border-bottom-width: 1px;
     border-bottom-style: solid;
-    z-index: 10;
 }
 
 .homeText {
@@ -42,9 +42,8 @@
     cursor: pointer;
     position: relative;
 }
-
 .homeTab a:hover {
-    background-color: rgba(15, 20, 25, 0.1);
+    background-color: rgba(15,20,25, 0.1);
 }
 
 .tabIndicator {
