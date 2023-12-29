@@ -12,6 +12,7 @@ export default function CommentForm({ id }: Props) {
   const [content, setContent] = useState('');
   const imageRef = useRef<HTMLInputElement>(null);
   const { data: me } = useSession();
+  console.log(me)
 
   const onClickButton = () => {}
   const onSubmit = () => {}
@@ -19,7 +20,7 @@ export default function CommentForm({ id }: Props) {
 
   const queryClient = useQueryClient();
   const post = queryClient.getQueryData(['posts', id]);
-  console.log('post', post, id);
+
   if (!post) {
     return null;
   }
